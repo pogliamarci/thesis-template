@@ -1,0 +1,11 @@
+This directory contains the fonts used throughout the document (free fonts,
+released under the OFL license).
+
+On a Linux system, just extract the files in the ~/.fonts directory.
+On other systems, follow the usual font installation procedure.
+After installation, XeLaTeX should be able to find the fonts and compile the file.
+
+Fonts:
+* Inconsolata http://www.levien.com/type/myfonts/inconsolata.html
+* Linux Libertine http://www.linuxlibertine.org/index.php?id=91&L=1
+

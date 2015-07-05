@@ -1,0 +1,10 @@
+% Requires the memoir class
+\makepagestyle{thesis}
+\makeatletter
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\MakeUppercase{#1}}{}}
+\makeevenhead{thesis}{\textbf{\thepage}\hspace{2em}\footnotesize{\ifnum \c@secnumdepth >\z@ \rightmark \fi}}{}{}
+\makeoddhead{thesis}{\footnotesize{\ifnum\c@secnumdepth>\m@ne\thechapter. \ \fi\MakeUppercase{\leftmark}}}{}{\textbf{\thepage}}
+\makeevenfoot{thesis}{}{}{}
+\makeoddfoot{thesis}{}{}{}
+\makeatother

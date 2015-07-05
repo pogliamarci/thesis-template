@@ -1,0 +1,25 @@
+\newcommand{\LargeFont}{% Needs a ’stretchable’ font
+    \usefont{\encodingdefault}{\rmdefault}{b}{n}%
+    \fontsize{80}{90}\selectfont}
+
+\makechapterstyle{thesis}{
+    \renewcommand{\chapterheadstart}{%
+        \vspace*{6\p@}%
+        %\parindent \z@ \reset@font%
+        \par\nobreak%
+    }
+    \renewcommand{\chaptitlefont}{%
+        \sffamily\huge%
+    }
+    \renewcommand{\chapnamefont}{}
+    \renewcommand{\chapnumfont}{%
+        \color{gray}\bfseries\LargeFont%
+    }
+    \renewcommand{\printchaptername}{}
+    \renewcommand{\printchapternum}{{\chapnumfont\thechapter}}
+    \renewcommand{\afterchapternum}{\hspace{1em}}
+    \renewcommand{\afterchaptertitle}{%
+        \par\nobreak\interlinepenalty\@M\vspace*{10\p@}%
+        \vskip 30\p@%
+    }
+}

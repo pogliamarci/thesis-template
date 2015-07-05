@@ -1,0 +1,106 @@
+% !TEX root = thesis.tex
+\documentclass[a4paper,11pt]{memoir}
+\usepackage[pass]{geometry}
+
+\usepackage[english, italian]{babel}
+\usepackage[numbers]{natbib}\citeindextrue
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{xfrac}
+
+\newtheorem{defn}{Definition}
+
+\setsecnumdepth{subsection}
+
+\usepackage{hyperref}
+
+\usepackage{notoccite} %Prevents citations in captions to mess up with bibliograph numbering
+
+\usepackage[printonlyused]{acronym}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% Pseudocode
+\usepackage[chapter]{algorithm}
+\usepackage{algorithmicx}
+\usepackage[noend]{algpseudocode}
+
+\usepackage{titling}
+\usepackage{thesis-title}
+\newcommand{\ThesisTitle}[0]{
+    \newgeometry{top=10mm,bottom=20mm,left=25mm,right=25mm}
+    \begin{titlingpage}
+    \thispagestyle{empty}
+    \maketitle
+    \end{titlingpage}
+    \restoregeometry
+}
+
+%% change figure caption format
+\usepackage{subcaption}
+\usepackage[font=small]{caption}
+\captionsetup[table]{labelfont={small,sc}, font={small,sc}, labelsep=newline,justification=centering,skip=5pt,position=top}
+\captionsetup[lstlisting]{labelfont={small,sc}, font={small,sc}, labelsep=newline,justification=centering,skip=8pt,position=top}
+\captionsetup[figure]{font=small,format=plain,labelfont=bf,textfont=it,labelsep=endash}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, shapes, matrix}
+\newsubfloat{figure}
+
+% Fonts
+\usepackage{fontspec}
+\newcommand{\nfont}{Linux Libertine O}
+\newcommand{\ttfont}{Inconsolata}
+\newcommand{\sffont}{Linux Biolinum O}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Ligatures={Common}, Numbers={OldStyle}]{\nfont}
+\setmonofont{\ttfont}
+\setsansfont{\sffont}
+
+% Decomment this to have smaller fonts in bibliography
+%\renewcommand*{\bibfont}{\small}
+
+\makeatletter
+\AtBeginDocument{
+    \hypersetup{
+        breaklinks=true,
+        pdfborder={0 0 0},
+        pdftitle={\@title},
+        pdfauthor={\@author},
+    }
+}
+\makeatother
+
+\definecolor{lstgray}{gray}{0.90}
+\lstset{
+    language=C,
+    tabsize=4,
+    breaklines,
+    breakatwhitespace,
+    basicstyle=\ttfamily\small,%footnotesize,
+    keywordstyle=\bfseries,
+    emphstyle=\ttfamily\itshape\underbar,
+    showstringspaces=false,
+    frame=tb,
+    captionpos=t,
+    backgroundcolor=\color{lstgray},
+    aboveskip=1em
+}
+
+\frenchspacing
+\linespread{1.2}
+
+\usepackage{thesis-chapter-headings}
+\chapterstyle{thesis}
+
+\usepackage{thesis-page-style}
+\AtBeginDocument{
+    \pagestyle{thesis}
+}
+
+%% Change section title format
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries\sffamily}{\thesection}{1em}{}
+

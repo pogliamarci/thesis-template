@@ -1,0 +1,49 @@
+%% Helper Macro
+\newcommand{\IfCommandExists}[3]{%
+  \ifcsname#1\endcsname%
+    #2
+  \else%
+    #3
+  \fi%
+}
+
+\renewcommand{\maketitlehooka}{
+  \centering
+  {\LARGE\UniversityName\\}
+  \Large
+  \emph{\DepartmentName}\\
+  \CourseName
+  \par
+  \hrulefill
+  \vskip 1.5cm
+  \includegraphics[width=3cm]{\LogoPath}\\[.5cm]
+}
+\renewcommand{\maketitlehookb}{
+  \vfill
+}
+\pretitle{\LARGE\bfseries}
+\posttitle{}
+\renewcommand{\maketitlehookc}{}
+\preauthor{\Large
+  \begin{flushleft}
+    \AdvisorTitle:\\
+    \textbf{\AdvisorName}
+    \IfCommandExists{SecondAdvisorName}{\\
+        \textbf{\SecondAdvisorName}\\[.3cm]
+    }{\\[.3cm]}
+    \IfCommandExists{CoadvisorName}{
+      \IfCommandExists{CoadvisorTitle}{
+        \CoadvisorTitle:\\
+      }{}
+      \textbf{\CoadvisorName}
+      \IfCommandExists{SecondCoadvisorName}{\\
+        \textbf{\SecondCoadvisorName}\\[.3cm]
+      }{\\[.3cm]}
+    }{}
+  \end{flushleft}
+\begin{flushright}\ThesisBy:\\\bfseries}
+\postauthor{\\\normalfont \StudentID\end{flushright}
+  \vfill
+}
+\predate{\Large\scshape Anno Accademico }
+\postdate{}
